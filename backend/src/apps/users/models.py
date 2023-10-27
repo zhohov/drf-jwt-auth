@@ -5,7 +5,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractUser
 class UserManager(BaseUserManager):
     def create_user(self, username: str, email: str, password: str) -> object:
         if not password:
-            raise ValueError('Email is Required')
+            raise ValueError('Password id Required')
         user = self.model(username=username, email=self.normalize_email(email))
         user.set_password(password)
         user.save()

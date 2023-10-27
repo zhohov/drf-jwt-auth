@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'users.User'
+
 
 # Application definition
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_spectacular',
+    'apps.users',
 
 ]
 

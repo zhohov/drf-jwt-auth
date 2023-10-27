@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+from apps.users.views import UsersList, UserDetail
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/users/', UsersList.as_view()),
+    path('api/users/<int:pk>/', UserDetail.as_view()),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='docs'),
 ]
